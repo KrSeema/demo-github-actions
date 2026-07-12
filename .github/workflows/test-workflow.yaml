@@ -1,0 +1,30 @@
+name: test-workflow
+
+on:
+    workflow_dispatch:
+    push:
+      branches: [ "main" ]
+  #pull_request:
+    #branches: [ "main" ]
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Run Test Script
+        run : |
+            pwd
+            cd ~
+            echo "Test Script executed successfully!"
+
+      - name: Verify Test Results
+        run: |
+            echo "Verifying test results..."
+            # Add your verification commands here
+            echo "Test results verified successfully!"
+
+
+        
